@@ -14,15 +14,14 @@
     <H1>Faça seu Login</H1>
     <div class="container text-center">
 
-        <form>
+        <form action="verificar_login.php" method="post"> <!-- O arquivo verificar_login.php será responsável por verificar o login no banco de dados -->
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"> <!-- Adicionado o atributo name="email" -->
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="senha"> <!-- Adicionado o atributo name="senha" -->
             </div>
 
             <div class="mb-3 form-check">
@@ -32,13 +31,8 @@
         </form>
 
     </div>
-    <!-- <div class="quadrado">
-        <label for="login">Login:</label><br>
-        <label for="senha">Senha:</label>
-        <br>
-        <button type="button" class="btn btn-info">ENTRAR</button>
-    </div> -->
 
 </body>
+
 
 </html>

@@ -1,14 +1,14 @@
 <?php
 // Verifica se os campos de nome de usuário e senha foram enviados
-if(isset($_POST['username'], $_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+if(isset($_POST['email'], $_POST['senha'])) {
+    $username = $_POST['email'];
+    $password = $_POST['senha'];
 
     // Informações de conexão
     $servidor = "localhost";
-    $usuario_bd = "seu_usuario";
-    $senha_bd = "sua_senha";
-    $banco = "nome_do_banco";
+    $usuario_bd = "root";
+    $senha_bd = "";
+    $banco = "bd_login";
 
     // Cria uma conexão com o banco de dados
     $conexao = new mysqli($servidor, $usuario_bd, $senha_bd, $banco);
@@ -19,7 +19,7 @@ if(isset($_POST['username'], $_POST['password'])) {
     }
 
     // Proteção contra SQL Injection: Usando instrução preparada
-    $sql = "SELECT * FROM usuarios WHERE username = ? AND password = ?";
+    $sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
@@ -29,9 +29,9 @@ if(isset($_POST['username'], $_POST['password'])) {
     if ($resultado->num_rows > 0) {
         // Login bem-sucedido
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $username;
         // Redireciona para a página de perfil do usuário, por exemplo
-        header("Location: perfil.php");
+        header("Location: logado.php");
         exit();
     } else {
         // Login falhou

@@ -35,7 +35,8 @@ if(isset($_POST['email'], $_POST['senha'])) {
         exit();
     } else {
         // Login falhou
-        echo "Usuário ou senha inválidos.";
+        echo "<script>alert('Usuário ou senha inválidos.');</script>";
+        header("refresh:0;url=login.php");
     }
 } else {
     // Campos de usuário ou senha não foram enviados

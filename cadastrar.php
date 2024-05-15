@@ -34,24 +34,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
-    <h2>Cadastro de Usuário</h2>
+    
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
+        <div class="container center">
+        <h1>Cadastro de Usuário</h1>
+            <label for="nome" class="form-label">Nome:</label><br>
+            <input type="text" class="form-control" id="nome" name="nome" required><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" class="form-control" id="email" name="email" required><br><br>
 
-        <label for="senha">Senha:</label><br>
-        <input type="password" id="senha" name="senha" required><br><br>
+            
+            <label for="senha">Senha:</label><br>
+            <input type="password" class="form-control" id="senha" name="senha" required><br><br>
+            
 
-        <input type="submit" value="Cadastrar">
+            <input type="submit" class="btn btn-primary" value="Cadastrar">
+        </div>
     </form>
 </body>
+
 </html>

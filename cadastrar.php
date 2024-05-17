@@ -64,24 +64,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validarSenhas();">
-        <div class="container center">
-        <h1>Cadastro de Usuário</h1>
-            <label for="nome" class="form-label">Nome:</label><br>
-            <input type="text" class="form-control" id="nome" name="nome" required><br><br>
+    <div class="background">
+        <div class="container text-center login-box">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validarSenhas();">
+                <div class="container center">
+                    <h1>Cadastro de Usuário</h1>
+                    <label for="nome" class="form-label">Nome:</label><br>
+                    <input type="text" class="form-control" id="nome" name="nome" required><br><br>
 
-            <label for="email">Email:</label><br>
-            <input type="email" class="form-control" id="email" name="email" required><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" class="form-control" id="email" name="email" required><br><br>
 
-            <label for="senha">Senha:</label><br>
-            <input type="password" class="form-control" id="senha" name="senha" required><br><br>
+                    <label for="senha">Senha:</label><br>
+                    <input type="password" class="form-control" id="senha" name="senha" required><br><br>
 
-            <label for="confirmar_senha">Confirmar Senha:</label><br>
-            <input type="password" class="form-control" id="confirmar_senha" required><br><br>
+                    <label for="confirmar_senha">Confirmar Senha:</label><br>
+                    <input type="password" class="form-control" id="confirmar_senha" required><br><br>
 
-            <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                </div>
         </div>
+    </div>
     </form>
 </body>
 

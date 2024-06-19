@@ -21,12 +21,16 @@
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Senha</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="senha">
+                    <input type="checkbox" id="showPassword" onclick="viewerSenha()"> Mostrar Senha
                 </div>
                 <button type="submit" class="btn btn-primary">Entrar</button>
             </form>
             <p class="cadlink">não tem cadastro? <a href="cadastrar.php">clique aqui</a></p>
         </div>
     </div>
+
+
+<script src="mostrasenha.js"></script>
 </body>
 
 </html>

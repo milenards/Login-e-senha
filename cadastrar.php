@@ -82,10 +82,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" class="form-control" id="confirmar_senha" required><br><br>
 
                     <input type="submit" class="btn btn-primary" value="Cadastrar">
+
                 </div>
         </div>
     </div>
     </form>
+
+
 </body>
 
+
+<script src="script.js"></script>
 </html>

@@ -1,3 +1,7 @@
+<?php
+include 'conexaoEmp.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +15,7 @@
         <div class="container text-center login-box">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validarSenhas();">
                 <div class="container center">
-                    <h1>Cadastro de logins</h1>
+                    <h1>Cadastro de Empresas</h1>
                     <label for="empresa" class="form-label">Empresa:</label><br>
                     <input type="text" class="form-control" id="empresa" name="empresa" required><br><br>
 
@@ -22,7 +26,7 @@
                     <input type="email" class="form-control" id="email" name="email"><br><br>
 
                     <label for="tel">Celular</label><br>
-                    <input type="tel" class="form-control" id="tel"><br><br>
+                    <input type="tel" class="form-control" id="tel" name="tel"><br><br>
 
                     <input type="submit" class="btn btn-primary" value="Cadastrar">
 

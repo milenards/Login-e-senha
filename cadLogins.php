@@ -1,33 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cadastro de logins</title>
-</head>
-<body>
-    <div class="background">
-        <div class="container text-center login-box">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validarSenhas();">
-                <div class="container center">
-                    <h1>Cadastrar login da empresa</h1>
-                    <p>Plataforma:</p>                
-                    <input type="checkbox" id="instagram" name="instagram" value="instagram">
-                    <label for="instagram" required> instagram</label><br>                    <input type="checkbox" id="facebook" name="facebook" value="facebook">
-                    <label for="facebook" required> Facebook</label><br>
-                    <input type="checkbox" id="tiktok" name="tiktok" value="tiktok">
-                    <label for="tiktok" required> Tiktok</label><br><br>
+<?php
+// Informações de conexão
+$servidor = "localhost";
+$usuario_db = "root";
+$senha_db = "";
+$banco = "bd_login";
 
-                    <label for="login">login:</label><br>
-                    <input type="text" class="form-control" id="CNPJ" name="CNPJ"><br><br>
+// Criar conexão
+$conexao = new mysqli($servidor, $usuario_db, $senha_db, $banco);
 
-                    <label for="senha">senha:</label><br>
-                    <input type="password" class="form-control" id="password" name="password"><br><br>
+// Verificar conexão
+if ($conexao->connect_error) {
+    die("Conexão falhou: " . $conexao->connect_error);
+}
 
-                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recebe os dados do formulário
+    $plataformas = $_POST['plataforma'];
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
 
-                </div>
-        </div>
-    </div>
-</html>
+    foreach ($plataformas as $plataforma) {
+        // Verifica se a plataforma já está cadastrada
+        $sql_verifica_plataforma = "SELECT id FROM logins_rs WHERE plataforma='$plataforma'";
+        $resultado = $conexao->query($sql_verifica_plataforma);
 
+        if ($resultado->num_rows > 0) {
+            // Se a plataforma já existe, exibe uma mensagem de erro
+            echo "<script>alert('A plataforma $plataforma já está cadastrada.');</script>";
+        } else {
+            // Prepara a instrução SQL para inserção
+            $sql = "INSERT INTO logins_rs(plataforma, login, senha) VALUES ('$plataforma', '$login', '$senha')";
+
+            // Executa a instrução SQL
+            if ($conexao->query($sql) === TRUE) {
+                echo "<script>alert('Cadastro realizado com sucesso para a plataforma $plataforma!');</script>";
+            } else {
+                echo "Erro ao cadastrar a plataforma $plataforma: " . $conexao->error;
+            }
+        }
+    }
+}
+?>

@@ -15,17 +15,21 @@ if ($conexao->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recebe os dados do formulário
-    $plataforma = $_POST['plataforma[]'];
+    $plataformas = $_POST['plataforma'];
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
+    foreach ($plataformas as $plataforma) {
+ 
+            $sql = "INSERT INTO logins_rs(plataforma, login, senha) VALUES ('$plataforma', '$login', '$senha')";
 
-    $sql = "INSERT INTO logins_rs(plataforma, login, senha) VALUES ('$plataforma', '$login', '$senha')";
-
-    // Executa a instrução SQL
-    if ($conexao->query($sql) === TRUE) {
-        echo "Cadastro realizado com sucesso!";
-    } else {
-        echo "Erro ao cadastrar: " . $conexao->error;
+            // Executa a instrução SQL
+            if ($conexao->query($sql) === TRUE) {
+                echo "<script>alert('Cadastro realizado com sucesso para a plataforma $plataforma!');</script>";
+            } else {
+                echo "Erro ao cadastrar a plataforma $plataforma: " . $conexao->error;
+            }
+        }
     }
-}
+
+?>

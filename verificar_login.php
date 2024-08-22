@@ -31,7 +31,7 @@ if(isset($_POST['email'], $_POST['senha'])) {
         session_start();
         $_SESSION['email'] = $username;
         // Redireciona para a página de perfil do usuário, por exemplo
-        header("Location: logado.php");
+        header("Location: inicio.php");
         exit();
     } else {
         // Login falhou

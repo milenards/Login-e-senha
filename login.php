@@ -25,7 +25,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Entrar</button>
             </form>
-            <p class="cadlink">não tem cadastro? <a href="cadastrar.php">clique aqui</a></p>
+            <p class="cadlink">não tem cadastro?<a href="cadastrar.php">clique aqui</a></p>
         </div>
     </div>
 

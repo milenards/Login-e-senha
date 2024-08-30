@@ -13,8 +13,8 @@
     <div class="background">
         <div class="container text-center login-box">
             <a class="link-offset-2 link-underline link-underline-opacity-0" href="CadastrarEmp.php" > Cadastrar Empresa</a><br>
-            <a class="link-offset-2 link-underline link-underline-opacity-0" href="CadloginsEmp.php"> CadloginsEmp.php</a><br>
-            <a class="link-offset-2 link-underline link-underline-opacity-0" href="#"> Verificar empresas cadastradas</a>
+            <a class="link-offset-2 link-underline link-underline-opacity-0" href="CadloginsEmp.php"> Cadastrar Logins das Empresas</a><br>
+            <a class="link-offset-2 link-underline link-underline-opacity-0" href="visualizarEmp.php"> Verificar empresas cadastradas</a>
         </div>
     </div>
 </body>

@@ -34,10 +34,12 @@ include 'conexaoEmp.php';
                     <input type="tel" class="form-control" id="tel" name="tel"><br><br>
 
                     <input type="submit" class="btn btn-primary" value="Cadastrar">
-
+                    <a href="inicio.php" class="btn btn-primary">Voltar</a>
                 </div>
         </div>
     </div>
+
     </form>
+
 
 </html>

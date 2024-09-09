@@ -30,27 +30,32 @@ $result = $conexao->query($sql);
                     <th>CNPJ</th>
                     <th>Email</th>
                     <th>Celular</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
+                    while ($row = $result->fetch_assoc()) {
                         echo "<tr>
-                                <td>{$row['id']}</td>
-                                <td>{$row['razao_social']}</td>
-                                <td>{$row['CNPJ']}</td>
-                                <td>{$row['email']}</td>
-                                <td>{$row['celular']}</td>
-                              </tr>";
+                    <td>{$row['id']}</td>
+                    <td>{$row['razao_social']}</td>
+                    <td>{$row['CNPJ']}</td>
+                    <td>{$row['email']}</td>
+                    <td>{$row['celular']}</td>
+                    <td><a href='editEmp.php?id={$row['id']}' class='btn btn-primary'>Editar</a></td> <!-- Link de edição -->
+
+                  </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='5' class='text-center'>Nenhuma empresa cadastrada</td></tr>";
+                    echo "<tr><td colspan='6' class='text-center'>Nenhuma empresa cadastrada</td></tr>";
                 }
                 ?>
             </tbody>
+
         </table>
     </div>
+<script src="confirmDelete.js"></script>
 </body>
 
 </html>

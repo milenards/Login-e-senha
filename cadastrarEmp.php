@@ -25,20 +25,20 @@ include 'conexaoEmp.php';
                     <input type="text" class="form-control" id="empresa" name="empresa" required><br><br>
 
                     <label for="CNPJ">CNPJ:</label><br>
-                    <input type="text" class="form-control" id="CNPJ" name="CNPJ"><br><br>
+                    <input type="text" class="form-control" id="CNPJ" name="CNPJ" oninput="formatarCNPJ(this)" maxlength="18"><br><br>
 
                     <label for="email">Email:</label><br>
                     <input type="email" class="form-control" id="email" name="email"><br><br>
 
                     <label for="tel">Celular</label><br>
-                    <input type="tel" class="form-control" id="tel" name="tel"><br><br>
+                    <input type="tel" class="form-control" id="tel" name="tel" oninput="formatarTelefone(this)"><br><br>
 
                     <input type="submit" class="btn btn-success" value="Cadastrar">
                     <a href="inicio.php" class="btn btn-primary">Voltar</a>
                 </div>
         </div>
     </div>
-
+   <script src="formatarNumerais.js"></script>
     </form>
 
 

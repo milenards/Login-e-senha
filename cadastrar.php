@@ -32,7 +32,8 @@ include 'conexao.php';
                     <label for="confirmar_senha">Confirmar Senha:</label><br>
                     <input type="password" class="form-control" id="confirmar_senha" required><br><br>
 
-                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    <input type="submit" class="btn btn-success" value="Cadastrar">
+                    <a href="inicio.php" class="btn btn-primary">Voltar</a>
 
                 </div>
         </div>

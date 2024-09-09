@@ -33,7 +33,7 @@ include 'conexaoEmp.php';
                     <label for="tel">Celular</label><br>
                     <input type="tel" class="form-control" id="tel" name="tel"><br><br>
 
-                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    <input type="submit" class="btn btn-success" value="Cadastrar">
                     <a href="inicio.php" class="btn btn-primary">Voltar</a>
                 </div>
         </div>

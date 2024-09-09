@@ -20,46 +20,50 @@ $result = $conexao->query($sql);
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Empresas Cadastradas</h1>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Empresa</th>
-                    <th>CNPJ</th>
-                    <th>Email</th>
-                    <th>Celular</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>
+    <div class="background">
+        <div class="container text-center login-box">
+            <div class="container mt-5">
+                <h1 class="text-center">Empresas Cadastradas</h1>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Empresa</th>
+                            <th>CNPJ</th>
+                            <th>Email</th>
+                            <th>Celular</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>
                     <td>{$row['id']}</td>
                     <td>{$row['razao_social']}</td>
                     <td>{$row['CNPJ']}</td>
                     <td>{$row['email']}</td>
                     <td>{$row['celular']}</td>
-                    <td><a href='editEmp.php?id={$row['id']}' class='btn btn-primary'>Editar</a></td> <!-- Link de edição -->
+                    <td><a href='editEmp.php?id={$row['id']}' class='btn btn-info'>Editar</a></td> <!-- Link de edição -->
 <td><button type=button onclick='confirmarExclusao({$row['id']})' class ='btn btn-danger' title='Excluir'>Excluir               
 </td></button>           
     
                   </tr>";
-                  
-                    }
-                } else {
-                    echo "<tr><td colspan='6' class='text-center'>Nenhuma empresa cadastrada</td></tr>";
-                }
-                ?>
+                            }
+                        } else {
+                            echo "<tr><td colspan='6' class='text-center'>Nenhuma empresa cadastrada</td></tr>";
+                        }
+                        ?>
 
-            </tbody>
-            <a href="inicio.php" class="btn btn-primary">Voltar</a>
+                    </tbody>
+                    
 
 
-        </table>
+                </table>
+                <a href="inicio.php" class="btn btn-primary">Voltar</a>
+            </div>
+        </div>
     </div>
     <script src="confirmDelete.js"></script>
 </body>

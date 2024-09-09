@@ -1,13 +1,13 @@
 <?php
 include 'conexaoEmp.php';
 
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    
+
     // Buscar os dados da empresa pelo ID
     $sql = "SELECT * FROM cad_emp WHERE id = $id";
     $result = $conexao->query($sql);
-    
+
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
     } else {
@@ -49,27 +49,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Editar Cadastro de Empresa</h1>
-        <form method="POST" action="">
-            <div class="mb-3">
-                <label for="razao_social" class="form-label">Razão Social</label>
-                <input type="text" class="form-control" id="razao_social" name="razao_social" value="<?php echo $row['razao_social']; ?>" required>
+    <div class="background">
+        <div class="container text-center login-box">
+            <div class="container mt-5">
+                <h1 class="text-center">Editar Cadastro de Empresa</h1>
+                <form method="POST" action="">
+                    <div class="mb-3">
+                        <label for="razao_social" class="form-label">Razão Social</label>
+                        <input type="text" class="form-control" id="razao_social" name="razao_social" value="<?php echo $row['razao_social']; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="CNPJ" class="form-label">CNPJ</label>
+                        <input type="text" class="form-control" id="CNPJ" name="CNPJ" value="<?php echo $row['CNPJ']; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<?php echo $row['email']; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="celular" class="form-label">Celular</label>
+                        <input type="text" class="form-control" id="celular" name="celular" value="<?php echo $row['celular']; ?>" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                    <a href="inicio.php" class="btn btn-primary">Voltar</a>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="CNPJ" class="form-label">CNPJ</label>
-                <input type="text" class="form-control" id="CNPJ" name="CNPJ" value="<?php echo $row['CNPJ']; ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value="<?php echo $row['email']; ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="celular" class="form-label">Celular</label>
-                <input type="text" class="form-control" id="celular" name="celular" value="<?php echo $row['celular']; ?>" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-        </form>
+        </div>
     </div>
 </body>
 

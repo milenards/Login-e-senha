@@ -44,18 +44,24 @@ $result = $conexao->query($sql);
                     <td>{$row['email']}</td>
                     <td>{$row['celular']}</td>
                     <td><a href='editEmp.php?id={$row['id']}' class='btn btn-primary'>Editar</a></td> <!-- Link de edição -->
-
+<td><button type=button onclick='confirmarExclusao({$row['id']})' class ='btn btn-danger' title='Excluir'>Excluir               
+</td></button>           
+    
                   </tr>";
+                  
                     }
                 } else {
                     echo "<tr><td colspan='6' class='text-center'>Nenhuma empresa cadastrada</td></tr>";
                 }
                 ?>
+
             </tbody>
+            <a href="inicio.php" class="btn btn-primary">Voltar</a>
+
 
         </table>
     </div>
-<script src="confirmDelete.js"></script>
+    <script src="confirmDelete.js"></script>
 </body>
 
 </html>

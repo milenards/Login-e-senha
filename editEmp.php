@@ -71,7 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <input type="text" class="form-control" id="celular" name="celular" value="<?php echo $row['celular']; ?>" required>
                     </div>
                     <button type="submit" class="btn btn-success">Salvar Alterações</button>
-                    <a href="inicio.php" class="btn btn-primary">Voltar</a>
+                    <a href="visualizarEmp.php" class="btn btn-primary">Voltar</a>
+                    <a href="cadloginsEmp.php?id=<?php echo $id; ?>" class="btn btn-warning">Vincular Redes Sociais</a> 
                 </form>
             </div>
         </div>

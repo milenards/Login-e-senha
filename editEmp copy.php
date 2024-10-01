@@ -1,9 +1,6 @@
 <?php
 include 'conexaoEmp.php';
 
-session_start(); // Inicia a sessão
-$_SESSION['empresa_id'] = 1; // Exemplo de como armazenar o ID da empresa após o login ou seleção da empresa
-
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
